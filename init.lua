@@ -1,8 +1,8 @@
---setup paker
-require("catman.plugins_setup")
 -- load base config
 require("catman.core.options")
 require("catman.core.keymaps")
+--setup paker
+require("catman.plugins_setup")
 require("catman.core.colorscheme")
 require("catman.core.vimplug")
 

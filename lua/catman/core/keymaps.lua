@@ -7,6 +7,7 @@ local keymap = vim.keymap
 ---------------------
 
 -- keymap.set({mode}, {lhs}, {rhs}, {opts})
+keymap.set("n", "s", "<nop>") --save current file
 keymap.set("n", "S", ":w<CR>") --save current file
 keymap.set("n", "Q", ":q<CR>") --save current file
 
@@ -46,6 +47,8 @@ keymap.set("n", "J", "10j")
 keymap.set("n", "K", "10k")
 
 -- 取消检索高亮
+keymap.set("n", "=", "Nzz")
+keymap.set("n", "-", "nzz")
 keymap.set("n", "<LEADER><CR>", ":nohlsearch<CR>")
 ----------------------
 -- Plugin Keybinds

@@ -17,6 +17,7 @@ opt.swapfile = false
 opt.wrap = true -- disable line wrapping
 
 -- search settings
+opt.incsearch = true
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
