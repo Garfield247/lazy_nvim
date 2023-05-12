@@ -46,15 +46,26 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
 
-	-- 文件浏览器
-	use("nvim-tree/nvim-tree.lua")
-	-- Buffer 栏
-	use("akinsho/bufferline.nvim")
 	-- 图标
 	use("kyazdani42/nvim-web-devicons")
+	-- 文件浏览器
+	-- nvim-tree
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+	-- bufferline
+	use({
+		"akinsho/bufferline.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
+	})
 
 	-- 状态栏
-	use("nvim-lualine/lualine.nvim")
+	-- lualine
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 
 	-- FZF支持
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -81,7 +92,6 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
 	--For vsnip users.
-	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
