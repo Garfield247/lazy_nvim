@@ -54,3 +54,4 @@ keymap.set("n", "<LEADER><CR>", ":nohlsearch<CR>")
 -- Plugin Keybinds
 ----------------------
 --
+keymap.set("n", "<LEADER>vb", ":call ViewInBrowser()<cr>")
