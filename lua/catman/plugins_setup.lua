@@ -141,4 +141,5 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 	use("f-person/git-blame.nvim")
+	use("kdheepak/lazygit.nvim")
 end)
