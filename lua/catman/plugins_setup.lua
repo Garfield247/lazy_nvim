@@ -142,4 +142,6 @@ return packer.startup(function(use)
 	end
 	use("f-person/git-blame.nvim")
 	use("kdheepak/lazygit.nvim")
+	use("numToStr/FTerm.nvim")
+	use("akinsho/toggleterm.nvim")
 end)
