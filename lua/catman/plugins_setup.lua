@@ -108,6 +108,10 @@ return packer.startup(function(use)
 	-- use("fatih/vim-go")
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua")
+	--debug
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("leoluz/nvim-dap-go")
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -140,8 +144,10 @@ return packer.startup(function(use)
 	if packer_bootstrap then
 		require("packer").sync()
 	end
+	-- git blame
 	use("f-person/git-blame.nvim")
+	--lazygit
 	use("kdheepak/lazygit.nvim")
-	use("numToStr/FTerm.nvim")
+	-- terminal
 	use("akinsho/toggleterm.nvim")
 end)

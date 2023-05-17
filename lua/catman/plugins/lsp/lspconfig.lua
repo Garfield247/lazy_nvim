@@ -70,10 +70,13 @@ lspconfig["tailwindcss"].setup({
 -- configure tailwindcss server
 lspconfig["gopls"].setup({
 	cmd = { "gopls" },
+    filetypes = {"go","gomod","gowork","gotmpl"},
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
 		gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
 			experimentalPostfixCompletions = true,
 			analyses = {
 				unusedparams = true,
