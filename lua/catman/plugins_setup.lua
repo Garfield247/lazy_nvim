@@ -105,9 +105,16 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- Golang support
+	use({
+		"olexsmir/gopher.nvim",
+		requires = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	})
 	-- use("fatih/vim-go")
-	use("ray-x/go.nvim")
-	use("ray-x/guihua.lua")
+	-- use("ray-x/go.nvim")
+	-- use("ray-x/guihua.lua")
 	--debug
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })

@@ -27,7 +27,9 @@ vim.opt.completeopt = "menu,menuone,noselect"
 -- 自动提示1 详情信息
 local cmpFormat1 = function(entry, vim_item)
 	-- fancy icons and a name of kind
-	vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+	-- vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+	vim_item.kind = lspkind.presets.default[vim_item.kind]
+
 	-- set a name for each source
 	vim_item.menu = ({
 		buffer = "[Buffer]",
@@ -49,6 +51,16 @@ cmp.setup({
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
+	},
+	window = {
+
+		completion = cmp.config.window.bordered({
+			border = "double",
+			-- winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Normal,Search:NONE",
+		}),
+		documentation = cmp.config.window.bordered({
+			border = "double",
+		}),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
@@ -112,6 +124,7 @@ cmp.setup({
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {
+		fields = { "kind", "abbr", "menu" },
 		format = cmpFormat1,
 	},
 })
