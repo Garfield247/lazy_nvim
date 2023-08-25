@@ -29,6 +29,7 @@ end
 return packer.startup(function(use)
 	-- packer自身
 	use("wbthomason/packer.nvim")
+	use("folke/tokyonight.nvim")
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
@@ -101,6 +102,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+	-- use({ "kkharji/lspsaga.nvim" })
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -157,4 +159,5 @@ return packer.startup(function(use)
 	use("kdheepak/lazygit.nvim")
 	-- terminal
 	use("akinsho/toggleterm.nvim")
+	use({ "michaelb/sniprun", run = "bash ./install.sh 1" })
 end)

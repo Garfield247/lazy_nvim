@@ -1,3 +1,4 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
@@ -70,13 +71,13 @@ lspconfig["tailwindcss"].setup({
 -- configure tailwindcss server
 lspconfig["gopls"].setup({
 	cmd = { "gopls" },
-    filetypes = {"go","gomod","gowork","gotmpl"},
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
 		gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
+			completeUnimported = true,
+			usePlaceholders = true,
 			experimentalPostfixCompletions = true,
 			analyses = {
 				unusedparams = true,
@@ -90,10 +91,32 @@ lspconfig["gopls"].setup({
 	},
 })
 -- configure python language server
-lspconfig["pyright"].setup({
+--[[ lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "python", "py" },
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+			},
+		},
+	},
+	single_file_support = true,
+}) ]]
+lspconfig["jedi_language_server"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "python", "py" },
+	single_file_support = true,
+})
+lspconfig["ruff_lsp"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "python", "py" },
+	single_file_support = true,
 })
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
