@@ -44,3 +44,4 @@ nvimtree.setup({
 
 local keymap = vim.keymap
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>E", ":NvimTreeFindFileToggle<CR>")

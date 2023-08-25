@@ -47,6 +47,8 @@ opt.iskeyword:append("-") -- consider string-string as whole word--vi
 opt.showcmd = true
 opt.wildmenu = true
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 --记录上次浏览位置
 --保存时删除行尾空白
 vim.cmd([[
