@@ -39,4 +39,20 @@ saga.setup({
 			quit = "q",
 		},
 	},
+	code_action = {
+
+		num_shortcut = true, -- 是否启用代码操作的数字快捷方式
+		show_server_name = false, -- 显示语言服务器名称
+		extend_gitsigns = false, --扩展 gitsigns 插件 diff 操作
+	},
+
+	diagnostic = {
+		max_height = 0.8,
+		keys = {
+			quit = { "q", "<ESC>" },
+		},
+		show_code_action = true,
+		jump_num_shortcut = true,
+		show_layout = "float",
+	},
 })
