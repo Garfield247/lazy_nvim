@@ -3,6 +3,7 @@ require("catman.core.options")
 require("catman.core.keymaps")
 --setup paker
 require("catman.plugins_setup")
+-- require("catman.plugins_setup_lazy")
 require("catman.core.colorscheme")
 require("catman.core.vimplug")
 
