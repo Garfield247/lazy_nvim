@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "catman.plugins" }, { import = "catman.plugins.lsp" } }, {
 	install = {
-		colorscheme = { "nightfly" },
+		colorscheme = { "gruvbox" },
 	},
 	checker = {
 		enabled = true,
