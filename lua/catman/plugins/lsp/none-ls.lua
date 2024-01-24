@@ -43,7 +43,7 @@ return {
 				formatting.stylua, -- lua formatter
 				formatting.isort,
 				formatting.black,
-				diagnostics.pylint,
+				-- diagnostics.pylint,
 				formatting.goimports,
 				formatting.gofmt,
 				diagnostics.eslint_d.with({ -- js/ts linter
